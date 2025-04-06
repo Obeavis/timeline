@@ -94,7 +94,7 @@ The project will be available at http://localhost:3000.
 ### 5. Folder Structure 📁 
 ```bash
 src/
-├── data/             # The data itens
+├── data/             # The data items
 ├── components/       # Reusable components
 ├── hooks/            # Custom hooks
 ├── libs/             # Utility functions and static data
