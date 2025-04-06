@@ -1,54 +1,102 @@
-# React + TypeScript + Vite
+# Timeline App 📅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive timeline.
 
-Currently, two official plugins are available:
+## What I Like About This Implementation 💡
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Drag-and-Drop**: The timeline items can be dragged and repositioned.
+- **Responsive Design**: The application is fully responsive, ensuring usability across devices of all sizes.
+- **Reusable Components**: The project is structured with reusable components, making it easy to extend and maintain.
+- **TailwindCSS Integration**: Styling is consistent and efficient, thanks to the utility-first approach of TailwindCSS.
+- **Zoom Functionality**: Users can zoom in and out of the timeline, offering flexibility in viewing events.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## What I Would Change If I Were to Do It Again 🔄
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Drag-and-Drop**: I would add a library like react-dnd to improve the user experience with drag and drop.
+- **State Management**: Introduce a more robust state management library like Redux or Zustand to handle complex interactions and improve scalability and save chages in the local storage.
+- **Custom Animations**: Add smooth animations for dragging and zooming to enhance the user experience further.
+- **Theming**: Implement a light/dark mode toggle for better user customization and/or way to the user manually change the card color.
+
+---
+
+## Design Decisions 🎨
+
+- **Inspiration**: The design was minimally inspired on Airtable timeline.
+- **Utility-First Styling**: TailwindCSS was chosen for its flexibility and speed in building consistent styles.
+- **Randomized Colors**: To differentiate timeline lanes and items visually, random colors were assigned, adding a playful and dynamic touch.
+
+---
+
+## How I Would Test This With More Time 🧪
+
+- **Unit Tests**: Write comprehensive unit tests for all components using a testing library like React Testing Library and Vitest.
+- **Integration Tests**: Test interactions between components, such as dragging items and updating the timeline.
+- **End-to-End Tests**: Use a tool like Cypress or Puppeteer to simulate user interactions and ensure the application behaves as expected.
+- **Performance Testing**: Test the application with large datasets to identify and resolve performance bottlenecks.
+- **Cross-Browser Testing**: Ensure compatibility across all major browsers and devices.
+- **Accessibility Testing**: Use tools like Axe or Lighthouse to identify and fix accessibility issues.
+
+---
+
+## Technologies Used 🚀
+
+- **React**: Library for building the user interface.
+- **Vite**: Fast build tool for development.
+- **TypeScript**: Superset of JavaScript for static typing.
+- **TailwindCSS**: For styling the interface.
+
+---
+
+## Prerequisites 📦
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+---
+
+## How to Run the Project ⚙️
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Obeavis/timeline.git
+```
+### 2. Navigate to the project directory
+```bash
+cd timeline
+```
+### 3. Install dependencies
+Using npm:
+```bash
+npm install
+```
+Or using yarn:
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4. Start the development server
+Using npm:
+```bash
+npm run dev
+```
+Or using yarn:
+```bash
+yarn dev
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The project will be available at http://localhost:3000.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 5. Folder Structure 📁 
+```bash
+src/
+├── data/             # The data itens
+├── components/       # Reusable components
+├── hooks/            # Custom hooks
+├── libs/             # Utility functions and static data
+├── services/         # The data services
 ```
